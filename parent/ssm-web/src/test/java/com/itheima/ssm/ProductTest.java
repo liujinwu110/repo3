@@ -19,7 +19,7 @@ public class ProductTest {
     @Autowired
     private ProductDao productDao;
     @Test
-    public void test2(){
+    public void test2() throws Exception {
         List<Product> productList = productService.findAll();
         for (Product product : productList) {
             System.out.println(product.getDepartureTimeStr());
@@ -28,8 +28,9 @@ public class ProductTest {
 
     @Test
     public void test1(){
-      List<Product> productList = productDao.findAll();
-       System.out.println(productList);
+        Product product = productDao.findById("5DC6A48DD4E94592AE904930EA866AFA");
+        System.out.println(product.getCityName());
+
     }
 
 }

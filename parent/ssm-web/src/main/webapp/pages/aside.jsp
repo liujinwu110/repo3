@@ -20,7 +20,7 @@
 		<ul class="sidebar-menu">
 			<li class="header">菜单</li>
 			<li id="admin-index"><a
-				href="${pageContext.request.contextPath}/pages/main.jsp"><i
+				href="${pageContext.request.contextPath}/main.jsp"><i
 					class="fa fa-dashboard"></i> <span>首页</span></a></li>
 
 			<li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
@@ -57,11 +57,11 @@
 				<ul class="treeview-menu">
 
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/product/findAll.do">
+						href="${pageContext.request.contextPath}/product/findAll">
 							<i class="fa fa-circle-o"></i> 产品管理
 					</a></li>
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/orders/findAll.do?page=1&size=4"> <i
+						href="${pageContext.request.contextPath}/order/findAll?page=1&size=4"> <i
 							class="fa fa-circle-o"></i> 订单管理
 					</a></li>
 

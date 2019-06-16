@@ -1,5 +1,6 @@
 package com.itheima.ssm.domain;
 
+import com.itheima.ssm.TypeUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.text.SimpleDateFormat;
@@ -59,10 +60,9 @@ public class Product {
     }
 
 
-    public String getDepartureTimeStr() {
+    public String getDepartureTimeStr() throws Exception {
         if (departureTime!=null){
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            departureTimeStr = simpleDateFormat.format(departureTime);
+            departureTimeStr=TypeUtils.date2String(departureTime,"yyyy-MM-dd HH:mm:ss");
         }
         return departureTimeStr;
     }

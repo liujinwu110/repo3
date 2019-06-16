@@ -13,6 +13,7 @@
         <module>ssm-service</module>
         <module>ssm-web</module>
         <module>domain</module>
+        <module>ssm-utils</module>
     </modules>
 
 
