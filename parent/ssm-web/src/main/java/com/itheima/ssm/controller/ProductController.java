@@ -10,19 +10,19 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("product")
+@RequestMapping("/product")
 public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("save")
+    @RequestMapping("/save")
     public ModelAndView saveProduct(Product product){
         productService.save(product);
         ModelAndView mv = findAll();
         return mv;
     }
 
-    @RequestMapping("findAll")
+    @RequestMapping("/findAll")
     public ModelAndView findAll() {
         ModelAndView mv = new ModelAndView();
         List<Product> productList = productService.findAll();
