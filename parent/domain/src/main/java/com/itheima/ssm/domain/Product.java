@@ -3,7 +3,6 @@ package com.itheima.ssm.domain;
 import com.itheima.ssm.TypeUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Product {

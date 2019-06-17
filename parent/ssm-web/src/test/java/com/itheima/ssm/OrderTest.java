@@ -1,6 +1,8 @@
 package com.itheima.ssm;
 
+import com.itheima.ssm.domain.Member;
 import com.itheima.ssm.domain.Orders;
+import com.itheima.ssm.domain.Traveller;
 import com.itheima.ssm.service.OrderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,8 +27,14 @@ public class OrderTest {
 
     @Test
     public void findByIdTest(){
-        Orders orders = orderService.findById("5DC6A48DD4E94592AE904930EA866AFA");
-        System.out.println(orders.getProduct().getCityName());
+        Orders orders = orderService.findById("0E7231DC797C486290E8713CA3C6ECCC");
+        Member member = orders.getMember();
+        System.out.println(member.getName());
+        System.out.println("--------------");
+        List<Traveller> travellerList = orders.getTravellerList();
+        for (Traveller traveller : travellerList) {
+            System.out.println(traveller.getName());
+        }
     }
 }
 

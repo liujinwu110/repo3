@@ -17,10 +17,10 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderDao orderDao;
-    @Autowired
-    private TravellerDao travellerDao;
-    @Autowired
-    private ProductDao productDao;
+   // @Autowired
+   //private TravellerDao travellerDao;
+   // @Autowired
+    //private ProductDao productDao;
     @Override
     public List<Orders> findAll(int page,int size) {
         PageHelper.startPage(page,size);
@@ -29,11 +29,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Orders findById(String id) {
-        List<Traveller> travellerList = travellerDao.findById(id);
+        //List<Traveller> travellerList = travellerDao.findById(id);
         Orders orders = orderDao.findById(id);
-        Product product = productDao.findById(id);
-        orders.setTravellerList(travellerList);
-        orders.setProduct(product);
+        //Product product = productDao.findById(id);
+       //orders.setTravellerList(travellerList);
+        //orders.setProduct(product);
         return orders;
     }
 
