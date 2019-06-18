@@ -17,7 +17,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping("/findAll")
+    @RequestMapping("/findAll.do")
     public ModelAndView findAll( @RequestParam( name = "page" ,required = true,defaultValue = "1") int page,@RequestParam(name = "size",required = true,defaultValue = "4") int size){
         ModelAndView mv = new ModelAndView();
         List<Orders> ordersList = orderService.findAll(page,size);
@@ -27,7 +27,7 @@ public class OrderController {
         return mv;
     }
 
-    @RequestMapping("findById")
+    @RequestMapping("findById.do")
     public ModelAndView findById(@RequestParam(name = "id",required = true) String id){
         ModelAndView mv = new ModelAndView();
         Orders orders = orderService.findById(id);

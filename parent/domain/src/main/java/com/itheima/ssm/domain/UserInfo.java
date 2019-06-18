@@ -3,13 +3,18 @@ package com.itheima.ssm.domain;
 import java.util.List;
 
 //与数据库中users对应
+@SuppressWarnings("AlibabaCommentsMustBeJavadocFormat")
 public class UserInfo {
     private String id;
     private String username;
     private String email;
     private String password;
     private String phoneNum;
-    private int status;
+    /**
+     * 0未开启
+     * 1已开启
+     */
+    private Integer status;
     private String statusStr;
     private List<Role> roles;
 
@@ -62,10 +67,19 @@ public class UserInfo {
     }
 
     public String getStatusStr() {
+        if (status != null){
+            if (status == 0){
+                statusStr = "未开启";
+            }
+            if (status == 0){
+                statusStr = "已开启";
+            }
+        }
         return statusStr;
     }
 
     public void setStatusStr(String statusStr) {
+
         this.statusStr = statusStr;
     }
 

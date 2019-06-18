@@ -246,7 +246,7 @@
                                     <td class="text-center">
                                         <button type="button" class="btn bg-olive btn-xs">订单</button>
                                         <button type="button" class="btn bg-olive btn-xs"
-                                                onclick="location.href='${pageContext.request.contextPath}/order/findById?id=${orders.id}'">
+                                                onclick="location.href='${pageContext.request.contextPath}/order/findById.do?id=${orders.id}'">
                                             详情
                                         </button>
                                         <button type="button" class="btn bg-olive btn-xs">编辑</button>
@@ -323,15 +323,15 @@
                     <div class="box-tools pull-right">
                         <ul class="pagination">
                             <li>
-                                <a href="${pageContext.request.contextPath}/order/findAll?page=1&size=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                <a href="${pageContext.request.contextPath}/order/findAll.do?page=1&size=${pageInfo.pageSize}" aria-label="Previous">首页</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?page=${pageInfo.pageNum}-1&size=${pageInfo.pageSize}">上一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/order/findAll.do?page=${pageInfo.pageNum}-1&size=${pageInfo.pageSize}">上一页</a></li>
                             <c:forEach begin="1" end="${pageInfo.pages}" var="page">
-                                <li><a href="${pageContext.request.contextPath}/order/findAll?page=${page}&size=${pageInfo.pageSize}">${page}</a></li>
+                                <li><a href="${pageContext.request.contextPath}/order/findAll.do?page=${page}&size=${pageInfo.pageSize}">${page}</a></li>
                             </c:forEach>
-                            <li><a href="${pageContext.request.contextPath}/order/findAll?page=${pageInfo.pageNum}+1&size=${pageInfo.pageSize}">下一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/order/findAll.do?page=${pageInfo.pageNum}+1&size=${pageInfo.pageSize}">下一页</a></li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/order/findAll?page=${pageInfo.pages}&size=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                <a href="${pageContext.request.contextPath}/order/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}" aria-label="Next">尾页</a>
                             </li>
                         </ul>
                     </div>
@@ -457,7 +457,7 @@
         var pageSize = $("#changePageSize").val();
 
         //向服务器发送请求，改变没页显示条数
-        location.href = "${pageContext.request.contextPath}/order/findAll?page=1&size="
+        location.href = "${pageContext.request.contextPath}/order/findAll.do?page=1&size="
             + pageSize;
     }
 

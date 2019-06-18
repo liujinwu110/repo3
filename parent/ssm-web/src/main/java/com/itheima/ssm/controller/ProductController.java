@@ -15,14 +15,14 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/save")
+    @RequestMapping("/save.do")
     public ModelAndView saveProduct(Product product){
         productService.save(product);
         ModelAndView mv = findAll();
         return mv;
     }
 
-    @RequestMapping("/findAll")
+    @RequestMapping("/findAll.do")
     public ModelAndView findAll() {
         ModelAndView mv = new ModelAndView();
         List<Product> productList = productService.findAll();

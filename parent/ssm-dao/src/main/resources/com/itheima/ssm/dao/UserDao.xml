@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.ssm.dao.UserDao">
+    <resultMap id="usersList" type="UserInfo">
+        <id column="id" property="id"/>
+        <result column="email" property="email"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="phoneNum" property="phoneNum"/>
+        <result column="status" property="status"/>
+        <collection property="roles" ofType="Role">
+            <id column="rid" property="id"/>
+            <result column="roleName" property="roleName"/>
+            <result column="roleDesc" property="roleDesc"/>
+        </collection>
+    </resultMap>
+    <select id="findByUsername" resultMap="usersList" parameterType="string">
+        select u.id,
+               u.email,
+               u.username,
+               u.password,
+               u.phonenum,
+               u.status,
+               r.id rid,
+               r.rolename,
+               r.roledesc
+          from users u, role r, users_role us
+         where u.username = #{username}
+           and u.id = us.userid
+           and r.id = us.roleid
+    </select>
+
+    <select id="findAll" resultType="UserInfo">
+        select * from users
+    </select>
+
+</mapper>
+    
