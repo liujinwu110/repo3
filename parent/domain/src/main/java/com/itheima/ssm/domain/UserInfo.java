@@ -71,7 +71,7 @@ public class UserInfo {
             if (status == 0){
                 statusStr = "未开启";
             }
-            if (status == 0){
+            if (status == 1){
                 statusStr = "已开启";
             }
         }

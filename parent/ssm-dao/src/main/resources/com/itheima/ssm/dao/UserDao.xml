@@ -34,5 +34,12 @@
         select * from users
     </select>
 
+    <insert id="save" parameterType="UserInfo">
+       insert into users
+            (email, username, password, phoneNum, status)
+          values
+            (#{email}, #{username}, #{password}, #{phoneNum}, #{status})
+    </insert>
+
 </mapper>
     

@@ -19,4 +19,6 @@ public interface UserDao {
      * @return
      */
     List<UserInfo> findAll();
+
+    void save(UserInfo userInfo);
 }

@@ -11,4 +11,10 @@ public interface UserService extends UserDetailsService {
      * @return
      */
     List<UserInfo> findAll();
+
+    /**
+     * 添加用户
+     * @param userInfo
+     */
+    void save(UserInfo userInfo);
 }
